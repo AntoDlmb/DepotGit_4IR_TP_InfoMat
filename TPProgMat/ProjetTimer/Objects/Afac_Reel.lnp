@@ -1,5 +1,6 @@
 --cpu Cortex-M3
 ".\objects\driver_gpio.o"
+".\objects\mytimer.o"
 ".\objects\principal.o"
 ".\objects\startup_stm32f10x_md.o"
 ".\objects\system_stm32f10x.o"

@@ -5,6 +5,7 @@
 #define NO_PIN_BUTTON 13
 
 int main(void){
+	
 	MyGPIO_Struct_TypeDef mGPIOLED = {
 		GPIOA,
 		NO_PIN_LED,
@@ -15,9 +16,10 @@ int main(void){
 		NO_PIN_BUTTON,
 		In_Floating
 	};
+	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
 	MyGPIO_Init(&mGPIOLED);
 	MyGPIO_Init(&mGPIOButton);
-	
 	do{
 		/*
 		* Quand on appui sur le bouton bleu, la LED s'allume.
