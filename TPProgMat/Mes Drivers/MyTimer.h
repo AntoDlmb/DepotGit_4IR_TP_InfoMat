@@ -20,6 +20,9 @@ con f pl u s f i n e s (PWM, codeur i n c . . . )
 */
 void MyTimer_Base_Init (MyTimer_Struct_TypeDef * Timer ) ;
 void MyTimer_ActiveIT (TIM_TypeDef * Timer, char prio, void (* IT_function)(void));
+void MyPWM_Enable (TIM_TypeDef * Timer ,char Channel) ;
+void MyPWM_SetRatio (TIM_TypeDef * Timer ,char Channel, char ratio);
+
 #define MY_TIMER_BASE_START(Timer) (Timer->CR1 |= TIM_CR1_CEN)
 #define MY_TIMER_BASE_STOP(Timer) (Timer->CR1 &= ~(TIM_CR1_CEN))
 #endif

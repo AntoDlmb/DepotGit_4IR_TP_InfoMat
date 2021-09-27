@@ -1,4 +1,5 @@
 #include"MyTimer.h"
+#define PWM_MODE_1 0x6
 
 //checker timer1 
 void (*MyCallback1)(void); 
@@ -15,8 +16,8 @@ void MyTimer_ActiveIT (TIM_TypeDef * Timer, char prio, void (* IT_function)(void
 	Timer->DIER |= (1 << 0);
 	
 	if (Timer==TIM1) {
-		NVIC_EnableIRQ(TIM1_CC_IRQn);
-		NVIC_SetPriority(TIM1_CC_IRQn,prio);
+		NVIC_EnableIRQ(TIM1_UP_IRQn );
+		NVIC_SetPriority(TIM1_UP_IRQn ,prio);
 		MyCallback1=IT_function;
 	}else if (Timer==TIM2){
 		NVIC_EnableIRQ(TIM2_IRQn);
@@ -35,7 +36,7 @@ void MyTimer_ActiveIT (TIM_TypeDef * Timer, char prio, void (* IT_function)(void
 
 	
 }
-void TIM1_CC_IRQHandler(void){
+void TIM1_UP_IRQHandler(void){
 	TIM1->SR &= ~TIM_SR_UIF;
 	MyCallback1();
 }
@@ -51,3 +52,66 @@ void TIM4_IRQHandler(void){
 	TIM4->SR &= ~TIM_SR_UIF;
 	MyCallback4();
 }
+
+void MyPWM_Enable (TIM_TypeDef * Timer ,char Channel){
+	
+	if (Channel==1) {
+		Timer->CCER |= TIM_CCER_CC1E;
+		Timer->CCMR1 &= ~TIM_CCMR1_OC1M;
+		Timer->CCMR1 |= TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1M_2;
+		
+	}else if (Channel==2){
+		Timer->CCER |= TIM_CCER_CC2E;
+		Timer->CCMR1 &= ~TIM_CCMR1_OC2M;
+		Timer->CCMR1 |= TIM_CCMR1_OC2M_1 | TIM_CCMR1_OC2M_2;
+	}else if (Channel==3){
+		Timer->CCER |= TIM_CCER_CC3E;
+		Timer->CCMR2 &= ~TIM_CCMR2_OC3M;
+		Timer->CCMR2 |= TIM_CCMR2_OC3M_1 | TIM_CCMR2_OC3M_2;
+	}else{
+		Timer->CCER |= TIM_CCER_CC4E;
+		Timer->CCMR2 &= ~TIM_CCMR2_OC4M;
+		Timer->CCMR2 |= TIM_CCMR2_OC4M_1 | TIM_CCMR2_OC4M_2;
+		
+	}
+}
+
+
+void MyPWM_SetRatio(TIM_TypeDef * Timer ,char Channel, char ratio){
+	if (Channel==1) {
+		Timer->CCR1=ratio*(Timer->ARR+1)/100;
+	}else if (Channel==2){
+		Timer->CCR2=ratio*(Timer->ARR+1)/100;
+	}else if (Channel==3){
+		Timer->CCR3=ratio*(Timer->ARR+1)/100;
+	}else{
+		Timer->CCR4=ratio*(Timer->ARR+1)/100;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
