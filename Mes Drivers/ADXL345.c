@@ -1,7 +1,12 @@
 #include "Driver_SPI.h"
+#include"Driver_GPIO.h"
 
+void Init_ADXL(MyGPIO_Struct_TypeDef* GPIO_CS){
+	MyGPIO_Init(GPIO_CS);
+}
 
 void Read_Acceleration(void (* Callback)(short int y, short int z)){
+	//mettre le NSS à 1 et le CS à 0 pendant utilisation sinon CS à 0
 	short int y, z ;
 	SPI1->CR1|=SPI_CR1_SPE;
 	

@@ -6,18 +6,31 @@ void SPI_Base_Init(){
 }
 
 char SPI_ReadWrite (char address){
-	SPI1->CR2|=SPI_CR2_TXEIE;
-	//mettre le NSS à 1 et le CS à 0 pendant utilisation sinon CS à 0
+	char data;
+		
+	SPI1->DR=0xF1; //On écrit n'importe quelle donnée
 	//Tant que TXE n'est pas à un on écrit pas dans DR
 	while (!(SPI1->CR2&SPI_CR2_TXEIE)){
-		
 	}
+	SPI1->CR2 &= ~SPI_CR2_TXEIE;
+	
 	SPI1->DR=address;
+	
 	while (!(SPI1->CR2&SPI_CR2_RXNEIE)){
-		
 	}
-	return SPI1->DR;
+	SPI1->DR;
+	SPI1->CR2 &= ~SPI_CR2_RXNEIE;
 	
+	while (!(SPI1->CR2&SPI_CR2_TXEIE)){
+	}
+	SPI1->CR2 &= ~SPI_CR2_TXEIE;
+	SPI1->DR=0x0;
 	
+	while (!(SPI1->CR2&SPI_CR2_RXNEIE)){
+	}
+	data = SPI1->DR;
+	SPI1->CR2 &= ~SPI_CR2_RXNEIE;
+	
+	return data;
 }
 
