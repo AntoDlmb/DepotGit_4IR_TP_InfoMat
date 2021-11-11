@@ -45,10 +45,6 @@ int main(void){
 		PWM_PIN,
 		AltOut_Ppull
 	};
-	
-	
-	
-	
 		
 	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
 	RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
