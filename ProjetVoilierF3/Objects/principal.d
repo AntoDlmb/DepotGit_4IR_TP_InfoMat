@@ -10,4 +10,4 @@
 .\objects\principal.o: ..\Mes Drivers\MyTimer.h
 .\objects\principal.o: ..\Mes Drivers\Driver_GPIO.h
 .\objects\principal.o: ..\Mes Drivers\Driver_USART.h
-.\objects\principal.o: ..\Mes Drivers\Driver_SPI.h
+.\objects\principal.o: ..\Mes Drivers\ADXL345.h

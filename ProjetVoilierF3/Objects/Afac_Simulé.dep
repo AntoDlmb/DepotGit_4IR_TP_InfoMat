@@ -10,7 +10,7 @@ I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cms
 I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D44B52)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D44B52)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
-F (..\Mes Drivers\MyTimer.c)(0x618CE1D8)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Include -I "..\Mes Drivers"-I.\RTE\Device\STM32F103RB-I.\RTE\_Simul_-IC:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\mytimer.o --omf_browse .\objects\mytimer.crf --depend .\objects\mytimer.d)
+F (..\Mes Drivers\MyTimer.c)(0x61913BFF)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Include -I "..\Mes Drivers"-I.\RTE\Device\STM32F103RB-I.\RTE\_Simul_-IC:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\mytimer.o --omf_browse .\objects\mytimer.crf --depend .\objects\mytimer.d)
 I (..\Mes Drivers\MyTimer.h)(0x618CE1D8)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
 I (.\RTE\_Simul_\RTE_Components.h)(0x618CE1D8)
@@ -40,7 +40,7 @@ I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cms
 I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D44B52)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D44B52)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
-F (..\Mes Drivers\ADXL345.c)(0x618D7037)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Include -I "..\Mes Drivers"-I.\RTE\Device\STM32F103RB-I.\RTE\_Simul_-IC:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\adxl345.o --omf_browse .\objects\adxl345.crf --depend .\objects\adxl345.d)
+F (..\Mes Drivers\ADXL345.c)(0x61917531)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Include -I "..\Mes Drivers"-I.\RTE\Device\STM32F103RB-I.\RTE\_Simul_-IC:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\adxl345.o --omf_browse .\objects\adxl345.crf --depend .\objects\adxl345.d)
 I (..\Mes Drivers\Driver_SPI.h)(0x618CE1D8)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
 I (.\RTE\_Simul_\RTE_Components.h)(0x618CE1D8)
@@ -51,7 +51,8 @@ I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cms
 I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D44B52)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
 I (..\Mes Drivers\Driver_GPIO.h)(0x618CE1D8)
-F (.\Source\Principal.c)(0x618D6E26)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Include -I "..\Mes Drivers"-I.\RTE\Device\STM32F103RB-I.\RTE\_Simul_-IC:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\principal.o --omf_browse .\objects\principal.crf --depend .\objects\principal.d)
+I (..\Mes Drivers\ADXL345.h)(0x61917542)
+F (.\Source\Principal.c)(0x61917FA6)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Include -I "..\Mes Drivers"-I.\RTE\Device\STM32F103RB-I.\RTE\_Simul_-IC:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\principal.o --omf_browse .\objects\principal.crf --depend .\objects\principal.d)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
 I (.\RTE\_Simul_\RTE_Components.h)(0x618CE1D8)
 I (C:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D44B52)
@@ -63,7 +64,7 @@ I (C:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Includ
 I (..\Mes Drivers\MyTimer.h)(0x618CE1D8)
 I (..\Mes Drivers\Driver_GPIO.h)(0x618CE1D8)
 I (..\Mes Drivers\Driver_USART.h)(0x618CE1D8)
-I (..\Mes Drivers\Driver_SPI.h)(0x618CE1D8)
+I (..\Mes Drivers\ADXL345.h)(0x61917542)
 F (RTE\Device\STM32F103RB\RTE_Device.h)(0x618CE1D8)()
 F (RTE\Device\STM32F103RB\startup_stm32f10x_md.s)(0x618CE1D8)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\Device\STM32F103RB-I.\RTE\_Simul_-IC:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_stm32f10x_md.lst --xref -o .\objects\startup_stm32f10x_md.o --depend .\objects\startup_stm32f10x_md.d)
 F (RTE\Device\STM32F103RB\system_stm32f10x.c)(0x618CE1D8)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Include -I "..\Mes Drivers"-I.\RTE\Device\STM32F103RB-I.\RTE\_Simul_-IC:\Users\OMman\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\OMman\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)

@@ -27,15 +27,15 @@ Project File Date:  11/11/2021
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Simulé'
-compiling ADXL345.c...
-..\Mes Drivers\ADXL345.c(12): error:  #28: expression must have a constant value
-  		CS_GPIO,
-..\Mes Drivers\ADXL345.c(13): error:  #28: expression must have a constant value
-  		csPin,
-..\Mes Drivers\ADXL345.c(4): warning:  #177-D: variable "GPIO_CS"  was declared but never referenced
-  static MyGPIO_Struct_TypeDef GPIO_CS = {
-..\Mes Drivers\ADXL345.c: 1 warning, 2 errors
-".\Objects\Afac_Simule.axf" - 2 Error(s), 1 Warning(s).
+compiling Principal.c...
+Source\Principal.c(34): warning:  #177-D: variable "y"  was declared but never referenced
+  	short int y = acc.y;
+Source\Principal.c(35): warning:  #177-D: variable "z"  was declared but never referenced
+  	short int z = acc.z;
+Source\Principal.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=2012 RO-data=300 RW-data=60 ZI-data=1028  
+".\Objects\Afac_Simule.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -62,12 +62,11 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.5.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\system_stm32f10x.c
-Target not created.
-Build Time Elapsed:  00:00:01
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
