@@ -2,8 +2,13 @@
 #define ADXL345_H
 #include "stm32f10x.h"
 
-void Init_ADXL(GPIO_TypeDef * CS_GPIO, char csPin);
+typedef struct {
+	short int y;
+	short int z;
+} Acceleration_TypeDef;
 
-void Read_Acceleration(void (* Callback)(short int y, short int z)); 
+void ADXL_Init(void);
+
+Acceleration_TypeDef Read_Acceleration(void); 
 
 #endif
