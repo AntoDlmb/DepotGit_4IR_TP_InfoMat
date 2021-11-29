@@ -25,6 +25,14 @@ void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer );
 
 #define MyTimer_Base_Stop( Timer ) (((Timer).timer-> SR & TIM_SR_UIF) ? (1) : (Timer).timer ->CR1 = (Timer).timer ->CR1 & ~( 1 << 0) )
 
+
+/* ** @brief
+* @param :-TIM_TypeDef*Timer  :   Timer concerne-char  Prio  :  de 0 a 15
+*@Note   Cette fonction active une interruption au débordement de Timer et exécute la fonction IT_fonction. 
+* La  fonction   MyTimer_Base_Init  doit  avoir  ete  lancee au prealable
+***************************************************************************************************/
+void MyTimer_ActiveIT(TIM_TypeDef* Timer ,char Prio, void (* IT_function) (void));
+
 /* **@brief
 *@param-> Paramètre sous forme d’une structure ( son adresse ) contenant les
 informations de base sur le timer
@@ -44,9 +52,10 @@ void MyTimer_PWM_Enable(TIM_TypeDef* Timer ,char Channel );
 *@param  -> une structure contenant les informations sur le timer associé, 
 * le ration de la pwm à mettre en oeuvre et le channel sur lequel la pwm sera émise
 *@Note   Communique au timer le ration de la pwm à émetrre*/
-void PWMRatio(TIM_TypeDef* Timer ,float ratio, char Channel);
+void PWMRatio(TIM_TypeDef* Timer ,float ration, char Channel);
 
 /* **@brief
+*@param  -> la priorité de l'interruption prio
 *@Note   Cette fonction initialise une external interupt servant à remettre à 0 le compteur du Timer 
 *en Encoder mode*/
 void init_EXIT(char prio);

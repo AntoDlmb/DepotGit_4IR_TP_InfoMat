@@ -1,10 +1,38 @@
+#include <stdio.h>
 #include "Timer.h"
 
 extern MyTimer_Struct_TypeDef TimerE; //Timer du principal.c en mode Encoder
 
+void (*pFnc) (void) = NULL;
+void (* IT_function) (void); 
+
+
+
 void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ){
 	Timer -> timer -> ARR = Timer ->ARR;
 	Timer -> timer -> PSC = Timer ->PSC;
+}
+
+void MyTimer_ActiveIT(TIM_TypeDef* Timer ,char Prio, void (*IT_function) (void)){
+	
+	Timer -> DIER = TIM_DIER_UIE;
+	
+	if (Timer == TIM1){ 
+		NVIC_EnableIRQ(TIM1_UP_IRQn);
+		NVIC_SetPriority(TIM1_UP_IRQn, (int)Prio);
+	}else if (Timer == TIM2){
+		NVIC_EnableIRQ(TIM2_IRQn);
+		NVIC_SetPriority(TIM2_IRQn, (int)Prio);
+	}else if (Timer == TIM3){
+		NVIC_EnableIRQ(TIM3_IRQn);
+		NVIC_SetPriority(TIM3_IRQn, (int)Prio);
+	}else if (Timer == TIM4){
+		NVIC_EnableIRQ(TIM4_IRQn);
+		NVIC_SetPriority(TIM4_IRQn, (int)Prio);
+	}
+	
+	pFnc = IT_function;
+	
 }
 
 void MyTimer_EncoderMode( MyTimer_Struct_TypeDef * Timer ){
@@ -107,8 +135,8 @@ void MyTimer_PWM_Enable(TIM_TypeDef* Timer ,char Channel ){
 	Timer -> CR1 = Timer -> CR1 & ~(1 << 5); // CMS
 }
 
-void PWMRatio(TIM_TypeDef* Timer ,float ratio, char Channel){
-	int valeur = (int)(ratio * (Timer -> ARR+1) /100);
+void PWMRatio(TIM_TypeDef* Timer ,float ration, char Channel){
+	int valeur = (int)(ration * (Timer -> ARR) /100);
 	if (Channel == 1)
 		Timer -> CCR1 = 	valeur;
 	else if (Channel == 2)
@@ -128,7 +156,7 @@ void init_EXIT(char prio){
 	
 	//EXTI0 line 6 of nvic
 	NVIC_EnableIRQ(EXTI0_IRQn);
-	NVIC_SetPriority(EXTI0_IRQn, prio);
+		NVIC_SetPriority(EXTI0_IRQn, prio);
 }
 
 void EXTI0_IRQHandler(){
@@ -136,4 +164,27 @@ void EXTI0_IRQHandler(){
 	TimerE.timer -> CNT = 0;
 }
 
-
+void TIM1_UP_IRQHandler(){
+		TIM1->SR = TIM1->SR & ~TIM_SR_UIF;
+	
+		if (pFnc != NULL)
+			(*pFnc) ();
+}
+void TIM2_IRQHandler(){
+	TIM2->SR = TIM2->SR & ~TIM_SR_UIF;
+	
+		if (pFnc != NULL)
+			(*pFnc) ();
+}
+void TIM3_IRQHandler(){
+	TIM3->SR = TIM3->SR & ~TIM_SR_UIF;
+	
+		if (pFnc != NULL)
+			(*pFnc) ();
+}
+void TIM4_IRQHandler(){
+	TIM4->SR = TIM4->SR & ~TIM_SR_UIF;
+	
+		if (pFnc != NULL)
+			(*pFnc) ();
+}
