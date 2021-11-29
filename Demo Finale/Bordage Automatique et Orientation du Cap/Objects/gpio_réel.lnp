@@ -3,6 +3,7 @@
 ".\objects\driver_gpio.o"
 ".\objects\timer.o"
 ".\objects\driver_servomoteur.o"
+".\objects\driver_usart.o"
 ".\objects\startup_stm32f10x_md.o"
 ".\objects\system_stm32f10x.o"
 --library_type=microlib --strict --scatter ".\Objects\gpio_réel.sct"

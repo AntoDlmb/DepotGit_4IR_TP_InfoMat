@@ -1,8 +1,18 @@
 #include "Driver_GPIO.h"
 
-void MyGPIO_Init( MyGPIO_Struct_TypeDef * GPIOStructPtr){
-	GPIOStructPtr -> GPIO -> CRL &= ~(0xF << (GPIOStructPtr->GPIO_Pin*4));
-	GPIOStructPtr -> GPIO -> CRL |= (GPIOStructPtr->GPIO_Conf << GPIOStructPtr->GPIO_Pin*4);
+void MyGPIO_Init(MyGPIO_Struct_TypeDef * GPIOStructPtr) {
+	GPIO_TypeDef * Port = GPIOStructPtr->GPIO;
+	char pinNumber = GPIOStructPtr->GPIO_Pin;
+	char config = GPIOStructPtr->GPIO_Conf;
+	
+	if (pinNumber < 8) {
+		Port->CRL &= ~(0xF << 4*pinNumber);
+		Port->CRL |= (config << 4*pinNumber);
+	} else {
+		Port->CRH &= ~(0xF << 4*(pinNumber%8));
+		Port->CRH |= (config << 4*(pinNumber%8));
+	}
+	
 }
 
 int MyGPIO_Read( GPIO_TypeDef * GPIO, char GPIO_Pin){
